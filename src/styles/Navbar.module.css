@@ -1,0 +1,14 @@
+.NavBar{
+    height:70px;
+    padding: 10px;
+    background-color: rgb(118, 86, 221);
+    font-size: larger;
+    font-weight: bolder;
+
+}
+.NavImg{
+    position: relative;
+    height: 50px;
+    width: 50px;
+    margin:5px;
+}
