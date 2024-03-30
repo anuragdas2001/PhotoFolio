@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Navbar } from "./components/Navbar/Navbar";
 import { Album } from "./components/Albums/Albums";
 import { AlbumForm } from "./components/AlbumForm/AlbumForm";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Moment } from "./components/Moment/Moment";
 function App() {
   const [albums, setAlbums] = useState([
     { albumName: "Anurag", albumImg: "zz" },
@@ -18,16 +20,35 @@ function App() {
     console.log("Inside handleClear!");
     setForm({ name: "", img: "" });
   };
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Navbar />,
+      children: [
+        {
+          path: "/",
+          element: (
+            <>
+              <AlbumForm
+                handleCreate={handleCreate}
+                handleClear={handleClear}
+                form={form}
+                setForm={setForm}
+              />
+              <Album albums={albums} />,
+            </>
+          ),
+        },
+        {
+          path:"/moments",
+          element:<Moment/>
+        }
+      ],
+    },
+  ]);
   return (
     <>
-      <Navbar />
-      <AlbumForm
-        handleCreate={handleCreate}
-        handleClear={handleClear}
-        form={form}
-        setForm={setForm}
-      />
-      <Album albums={albums} />
+      <RouterProvider router={router} />
     </>
   );
 }

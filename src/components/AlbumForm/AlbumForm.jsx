@@ -1,4 +1,5 @@
 import styles from "../../styles/AlbumForm.module.css";
+
 export const AlbumForm = ({handleCreate,handleClear,form,setForm}) => {
   return (
     <>
@@ -51,6 +52,8 @@ export const AlbumForm = ({handleCreate,handleClear,form,setForm}) => {
           </button>
         </form>
       </div>
+     
+
     </>
   );
 };

@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import styles from "../../styles/Navbar.module.css"
 export const Navbar = () => {
   return (
@@ -10,6 +11,7 @@ export const Navbar = () => {
           </a>
         </div>
       </nav>
+     <Outlet/>
     </>
   );
 };
