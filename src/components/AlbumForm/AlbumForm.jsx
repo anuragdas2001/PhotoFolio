@@ -1,5 +1,5 @@
 import styles from "../../styles/AlbumForm.module.css";
-export const AlbumForm = () => {
+export const AlbumForm = ({handleCreate,handleClear,form,setForm}) => {
   return (
     <>
       <div className={styles.FormContainer}>
@@ -11,6 +11,8 @@ export const AlbumForm = () => {
             placeholder="Album Name"
             className={styles.form}
             style={{ borderRadius: "50px", textAlign: "center" }}
+            value={form.name}
+            onChange={(e)=>setForm({name:e.target.value,img:""})}
           />
 
           <button
@@ -25,6 +27,7 @@ export const AlbumForm = () => {
               borderRadius: "5px",
               fontWeight: "bold" 
             }}
+            onClick={(e)=>handleClear(e)}
           >
             Clear
           </button>
@@ -41,6 +44,7 @@ export const AlbumForm = () => {
               borderRadius: "5px",
               fontWeight: "bold" 
             }}
+            onClick={(e)=>handleCreate(e)}
           >
             {" "}
             Create

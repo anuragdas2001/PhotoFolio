@@ -1,6 +1,6 @@
 import { AlbumItems } from "../AlbumItems/AlbumItems";
 export const Album = ({albums}) => {
-  console.log(albums);
+  // console.log(albums);
   return (
     <>
       {albums.map((album,index)=>{
